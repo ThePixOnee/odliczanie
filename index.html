@@ -1,0 +1,65 @@
+!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Odliczanie dni Wakacji </title>
+	
+	<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=iOzF-wr41s9M2c3WC6Bxuof1VV3XlZgRCri22ssEMGDgR_SIeDZLsq1OTsYy37fTFH-7EAkh76Wi2-g9Ps8pLg" charset="UTF-8"></script><script type="text/javascript" >
+
+	
+	function odliczanie()
+	{
+		var dzisiaj = new Date();//obiekat Date 
+		
+		var dzien = dzisiaj.getDate();
+		var miesiac = dzisiaj.getMonth()+1;
+		var rok = dzisiaj.getFullYear();
+		var milisekundy = dzisiaj.getTime();
+		
+		var end = new Date("06/25/2022");//data wydarzenia
+		var endDzien = end.getDate();
+		var endMiesiac = end.getMonth()+1;
+		var endRok = end.getFullYear();
+		var milisekundy2 = end.getTime();
+		
+		var pozostalo = milisekundy2 - milisekundy; //obliczamy ile milisekund pozostało do wydarzenia
+		var dni = Math.floor(pozostalo/86400000); //obliczamy liczbe dni do wydarzenia
+		
+	
+		
+		document.getElementById("aktualnaData").innerHTML = "Aktualna data: "+dzien+"/"+miesiac+"/"+rok; 
+		document.getElementById("dataWydarzenia").innerHTML = "Data wydarzenia do którego obliczamy liczbę dni: "+endDzien+"/"+endMiesiac+"/"+endRok;
+		document.getElementById("dniDoWydarzenia").innerHTML ="Do wydarzenia pozostało: "+ dni;
+		 
+	}
+	
+	</script>
+
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+<body>
+
+<div id="container">
+<div id="topBar">
+
+	
+	<div id="aktualnaData">...</div> 
+
+	<br/>
+	
+	<div id="dataWydarzenia">...</div>
+<br/>
+<br/>	
+	
+	<div id="dniDoWydarzenia">...</div> 
+	
+	<script type="text/javascript" >
+	odliczanie();
+</script>
+<div id="footer">
+Wakacje ;koduj&gt;
+</div>
+</div>
+</body>
+</html>
